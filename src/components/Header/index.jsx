@@ -7,10 +7,13 @@ export function Header() {
   return (
     <HeaderWrapper>
       <Container>
-        <Link to="/">
+        <StyledBrand to="/">
           <StyledDiamond />
-          <Brand>YES</Brand>
-        </Link>
+          <StyledBrandText>
+            <BrandMini>She said</BrandMini>
+            <Brand>YES</Brand>
+          </StyledBrandText>
+        </StyledBrand>
         <Navbar>
           <NavbarLink to="store">Store</NavbarLink>
           <NavbarLink to="search">Search</NavbarLink>
@@ -22,37 +25,52 @@ export function Header() {
 }
 
 const StyledDiamond = styled(Diamond)`
-    height: 4rem;
-    color: ${({ theme }) => theme.colors.light};
+  height: 4.5rem;
+  margin-right: 0.5rem;
+  color: ${({ theme }) => theme.colors.light};
+`;
+
+const Brand = styled.h1`
+  font-size: 3rem;
+`;
+
+const StyledBrand = styled(Link)`
+  display: flex;
+`;
+
+const StyledBrandText = styled.div`
+  display: flex;
+  flex-direction: column;
+  color: ${({ theme }) => theme.colors.dark};
+`;
+const BrandMini = styled.p`
+  font-size: 1rem;
 `;
 
 const HeaderWrapper = styled.header`
-  background-color: ${({ theme }) => theme.colors.dark};
-`; 
+  background-color: ${({ theme }) => theme.colors.black};
+`;
 
- const Container = styled.div`
+const Container = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
   max-width: ${({ theme }) => theme.widths.content};
   margin: 0 auto;
-  padding: 4rem;
+  padding: 1rem 4rem;
   @media (max-width: 768px) {
     flex-direction: column;
     gap: 4rem;
   }
 `;
 
-const Brand = styled.h1`
-    font-size: 5rem;
-`
 
 const Navbar = styled.nav`
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 7rem;
-  font-size: 2.4rem;
+  font-size: 1.7rem;
   @media (max-width: 480px) {
     gap: 0;
     width: 100%;
@@ -61,12 +79,23 @@ const Navbar = styled.nav`
 
 const NavbarLink = styled(Link)`
   padding: 1rem;
-  color: ${({ theme }) => theme.colors.light};
-  transition: transform 0.15s ease-in-out;
+  color: ${({ theme }) => theme.colors.dark};
+  background: linear-gradient(90deg, #000 50%, #fff 0),
+    linear-gradient(-90deg, #000 50%, #fff 0),
+    linear-gradient(90deg, #0000 50%, #000 0),
+    linear-gradient(-90deg, #0000 50%, #000 0);
+  background-repeat: no-repeat;
+  background-size: 200% 51%;
+  background-position: top left, bottom right;
+  -webkit-background-clip: text, text, padding-box, padding-box;
+  background-clip: text, text, padding-box, padding-box;
+  transition: 0.8s;
   &:hover {
-    transform: scale(1.1);
+    background-position: top right, bottom left;
   }
 `;
+
+
 
 /* const ButtonContainer = styled.div`
   position: relative;
