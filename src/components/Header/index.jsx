@@ -2,6 +2,7 @@ import React from "react";
 import { NavLink, Link } from "react-router-dom";
 import styled from "styled-components";
 import { Diamond } from "@styled-icons/ionicons-solid/Diamond";
+import { Bag } from "@styled-icons/bootstrap/Bag";
 
 export function Header() {
   return (
@@ -17,7 +18,7 @@ export function Header() {
         <Navbar>
           <NavbarLink to="store">Store</NavbarLink>
           <NavbarLink to="search">Search</NavbarLink>
-          <NavbarLink to="bag">Bag</NavbarLink>
+          <NavbarLink to="bag"><StyledBag/></NavbarLink>
         </Navbar>
       </Container>
     </HeaderWrapper>
@@ -31,7 +32,7 @@ const StyledDiamond = styled(Diamond)`
 `;
 
 const Brand = styled.h1`
-  font-size: 3rem;
+  font-size: 3.2rem;
   color: ${({ theme }) => theme.colors.black};
 `;
 
@@ -45,12 +46,18 @@ const StyledBrandText = styled.div`
 `;
 const BrandMini = styled.p`
   font-size: 1rem;
+  margin-bottom: -0.3rem;
   color: ${({ theme }) => theme.colors.primary};
 `;
+
+const StyledBag = styled(Bag)`
+    height: 2rem;
+`
 
 const HeaderWrapper = styled.header`
   background-color: ${({ theme }) => theme.colors.light};
   box-shadow: 0px 9px 8px -7px rgba(0, 0, 0, 0.75);
+  margin-bottom: 1rem;
 `;
 
 const Container = styled.div`
@@ -81,19 +88,16 @@ const Navbar = styled.nav`
 
 const NavbarLink = styled(Link)`
   padding: 1rem;
-  color: ${({ theme }) => theme.colors.primary};
-  background: linear-gradient(90deg, #000 50%, #fff 0),
-    linear-gradient(-90deg, #000 50%, #fff 0),
-    linear-gradient(90deg, #0000 50%, #000 0),
-    linear-gradient(-90deg, #0000 50%, #000 0);
+  color: ${({ theme }) => theme.colors.black};
+  background: linear-gradient(currentColor 0 0) 0 0,
+    linear-gradient(currentColor 0 0) 0 0,
+    linear-gradient(currentColor 0 0) 100% 100%,
+    linear-gradient(currentColor 0 0) 100% 100%;
+  background-size: var(--d, 0) 3px, 3px var(--d, 0);
   background-repeat: no-repeat;
-  background-size: 200% 51%;
-  background-position: top left, bottom right;
-  -webkit-background-clip: text, text, padding-box, padding-box;
-  background-clip: text, text, padding-box, padding-box;
-  transition: 0.8s;
+  transition: 0.5s;
   &:hover {
-    background-position: top right, bottom left;
+    --d: 100%;
   }
 `;
 
