@@ -27,11 +27,12 @@ export function Header() {
 const StyledDiamond = styled(Diamond)`
   height: 4.5rem;
   margin-right: 0.5rem;
-  color: ${({ theme }) => theme.colors.light};
+  color: ${({ theme }) => theme.colors.black};
 `;
 
 const Brand = styled.h1`
   font-size: 3rem;
+  color: ${({ theme }) => theme.colors.black};
 `;
 
 const StyledBrand = styled(Link)`
@@ -41,14 +42,15 @@ const StyledBrand = styled(Link)`
 const StyledBrandText = styled.div`
   display: flex;
   flex-direction: column;
-  color: ${({ theme }) => theme.colors.dark};
 `;
 const BrandMini = styled.p`
   font-size: 1rem;
+  color: ${({ theme }) => theme.colors.primary};
 `;
 
 const HeaderWrapper = styled.header`
-  background-color: ${({ theme }) => theme.colors.black};
+  background-color: ${({ theme }) => theme.colors.light};
+  box-shadow: 0px 9px 8px -7px rgba(0, 0, 0, 0.75);
 `;
 
 const Container = styled.div`
@@ -79,7 +81,7 @@ const Navbar = styled.nav`
 
 const NavbarLink = styled(Link)`
   padding: 1rem;
-  color: ${({ theme }) => theme.colors.dark};
+  color: ${({ theme }) => theme.colors.primary};
   background: linear-gradient(90deg, #000 50%, #fff 0),
     linear-gradient(-90deg, #000 50%, #fff 0),
     linear-gradient(90deg, #0000 50%, #000 0),
