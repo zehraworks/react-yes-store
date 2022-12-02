@@ -9,6 +9,7 @@ export function Products() {
       {data.map((product) => (
         <Product
           key={product.id}
+          id={product.id}
           name={product.name}
           img={product.img}
           price={product.price}

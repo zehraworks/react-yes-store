@@ -3,6 +3,7 @@ import { NavLink, Link } from "react-router-dom";
 import styled from "styled-components";
 import { Diamond } from "@styled-icons/ionicons-solid/Diamond";
 import { Bag } from "@styled-icons/bootstrap/Bag";
+import { Search } from "styled-icons/bootstrap";
 
 export function Header() {
   return (
@@ -17,7 +18,7 @@ export function Header() {
         </StyledBrand>
         <Navbar>
           <NavbarLink to="store">Store</NavbarLink>
-          <NavbarLink to="search">Search</NavbarLink>
+          <NavbarLink to="search"><StyledSearch/></NavbarLink>
           <NavbarLink to="bag"><StyledBag/></NavbarLink>
         </Navbar>
       </Container>
@@ -29,6 +30,9 @@ const StyledDiamond = styled(Diamond)`
   height: 4.5rem;
   margin-right: 0.5rem;
   color: ${({ theme }) => theme.colors.black};
+`;
+const StyledSearch = styled(Search)`
+  height: 2rem;
 `;
 
 const Brand = styled.h1`
@@ -77,8 +81,8 @@ const Container = styled.div`
 const Navbar = styled.nav`
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  gap: 7rem;
+  justify-content: center;
+  gap: 2rem;
   font-size: 1.7rem;
   @media (max-width: 480px) {
     gap: 0;

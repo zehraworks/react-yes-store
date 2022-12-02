@@ -2,10 +2,11 @@ import {
   Home,
   Products,
   Product,
+  ProductDetail,
   ProductsLayout,
   Search,
   Bag,
-  Page404
+  Page404,
 } from "./pages";
 
 const routes = [
@@ -20,7 +21,7 @@ const routes = [
       { index: true, element: <Products /> },
       {
         path: "product/:productId",
-        element: <Product />,
+        element: <ProductDetail />,
       },
     ],
   },
@@ -30,7 +31,7 @@ const routes = [
   },
   {
     path: "bag",
-    element: <Bag />
+    element: <Bag />,
   },
   {
     path: "*",

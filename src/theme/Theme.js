@@ -1,6 +1,6 @@
 export const Theme = {
   colors: {
-    primary: "pink",
+    primary: "#FFB3CF",
     red: "#ff9999",
     dark: "#CCC",
     black: "#000",
@@ -11,7 +11,7 @@ export const Theme = {
       dark: "#7B7B7B",
     },
     hover: {
-      primary: "#35eec2",
+      primary: "#FFABCA",
       red: "#ee8888",
       grey: "#d4d4d4",
       dark: "#333",

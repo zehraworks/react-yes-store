@@ -1,19 +1,25 @@
 import React from "react";
-import { useParams } from "react-router-dom";
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
-export function Product({ name, img, price }) {
-  const { productId } = useParams();
+export function Product({ name, img, price, id }) {
   return (
-    <Card>
-      <img src={img} />
-      <div>
-        <p>{name}</p>
-        <p>{price}</p>
-      </div>
-    </Card>
+    <Link to={`product/${id}`}>
+      <Card>
+        <Img src={img} />
+        <div>
+          <p>{name}</p>
+          <p>{price}</p>
+        </div>
+      </Card>
+    </Link>
   );
 }
+
+const Img = styled.img`
+  transition: transform ease-in-out 0.3s;
+  overflow: hidden;
+`;
 
 const Card = styled.div`
   display: flex;
@@ -21,4 +27,9 @@ const Card = styled.div`
   width: 20rem;
   height: 16rem;
   margin: 1rem 1.5rem;
+  gap: 1rem;
+  overflow: hidden;
+  &:hover ${Img} {
+    transform: scale(1.15);
+  }
 `;
