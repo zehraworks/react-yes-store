@@ -2,11 +2,14 @@ import React from "react";
 import { useParams } from "react-router-dom";
 import data from "../../../data/data.js";
 import styled from "styled-components";
+import { useDispatch } from "react-redux";
+import { addItem } from "../../../redux/bagSlice/bagSlice.js";
 
 export function ProductDetail() {
   const { productId } = useParams();
   console.log(data);
-  const product = data.find((p) => p.id == productId);
+  const product = data.find((p) => p.id == productId); // strick equalitiyle undefined dönüyo
+  const dispatch = useDispatch();
 
   return (
     <StyledWrapper>
@@ -20,7 +23,7 @@ export function ProductDetail() {
           delectus repudiandae placeat enim nam omnis. Velit fugit maxime ullam
           accusamus delectus.
         </Detail>
-        <Btn>ADD TO CARD</Btn>
+        <Btn onClick={() => dispatch(addItem())}>ADD TO CARD</Btn>
       </Right>
     </StyledWrapper>
   );
@@ -45,14 +48,14 @@ const Right = styled.div`
 `;
 
 const Name = styled.h3`
-    font-size: 30px;
+  font-size: 30px;
 `;
 const Price = styled.h5`
-    font-size: 20px;
+  font-size: 20px;
 `;
 
 const Detail = styled.p`
-    font-size: 15px;
+  font-size: 15px;
 `;
 const Btn = styled.button`
   background-color: ${({ theme }) => theme.colors.primary};
@@ -62,4 +65,7 @@ const Btn = styled.button`
   font-size: 15px;
   font-weight: 700;
   border-style: none;
+  &:hover {
+    background-color: ${({ theme }) => theme.colors.hover.primary};
+  }
 `;

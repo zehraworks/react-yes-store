@@ -28,45 +28,46 @@ const StyledHome = styled.div`
 `;
 
 const Btn = styled.button`
+  padding: 1rem 2rem;
+  font-size: 1.25rem;
   position: absolute;
-  top: 50%;
-  z-index: 1;
-  padding: 5px 2em;
-  font-size: 2rem;
+  top:50%;
+  border: 2px solid black;
+  text-align: center;
   cursor: pointer;
-  color: ${({ theme }) => theme.colors.primary};
+  color: ${({ theme }) => theme.colors.black};
   background-color: transparent;
   text-transform: uppercase;
 
-	&::after,
-	&::before {
-		content: "";
-		position: absolute;
-		border: 3px solid black;
-		width: calc(100% + 15px);
-		height: 60px;
-		transition: 0.5s ease;
-	}
+  &::after,
+  &::before {
+    content: "";
+    position: absolute;
+    border: 2px solid black;
+    width: calc(100% + 15px);
+    height: 60px;
+    transition: 0.5s ease;
+  }
 
-	&::after {
-		top: -15px;
-		left: -15px;
-		border-right: none;
-		border-bottom: none;
-	}
+  &::after {
+    top: -15px;
+    left: -15px;
+    border-right: none;
+    border-bottom: none;
+  }
 
-	&::before {
-		bottom: -15px;
-		right: -15px;
-		border-left: none;
-		border-top: none;
-	}
+  &::before {
+    bottom: -15px;
+    right: -15px;
+    border-left: none;
+    border-top: none;
+  }
 
-	&:hover:after,
-	&:hover:before {
-		width: calc(100% - 30px);
-		height: 80px;
-	}
+  &:hover:after,
+  &:hover:before {
+    width: calc(100% - 30px);
+    height: 80px;
+  }
 `;
 
 /* const Photo = styled.img.attrs((props) => ({
