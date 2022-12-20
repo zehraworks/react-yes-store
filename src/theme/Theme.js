@@ -1,8 +1,8 @@
 export const Theme = {
   colors: {
-    primary: "#fbfbfd",
+    primary: "#cf9fae",
     red: "#ff9999",
-    dark: "#CCC",
+    dark: "#a8624c",
     black: "#000",
     light: "#FFF",
     grey: {
@@ -11,7 +11,7 @@ export const Theme = {
       dark: "#7B7B7B",
     },
     hover: {
-      primary: "#FFABCA",
+      primary: "#b88a98",
       red: "#ee8888",
       grey: "#d4d4d4",
       dark: "#333",

@@ -14,8 +14,8 @@ import zigzag from "../../public/images/zigzag-1.jpg";
 const data = [
   {
     id: 1,
-    name: "Beam Baget",
-    img: beamBaget,
+    name: "Triple Pearl",
+    img: triplePearl,
     price: "$130",
   },
   {
@@ -74,8 +74,8 @@ const data = [
   },
   {
     id: 11,
-    name: "Triple Pearl",
-    img: triplePearl,
+    name: "Beam Baget",
+    img: beamBaget,
     price: "$330",
   },
   {
@@ -86,4 +86,4 @@ const data = [
   },
 ];
 
-export default data
+export default data;

@@ -12,7 +12,7 @@ export function Header() {
         <StyledBrand to="/">
           <StyledDiamond />
           <StyledBrandText>
-            <BrandMini>She said</BrandMini>
+            <BrandMini>Everybody said</BrandMini>
             <Brand>YES</Brand>
           </StyledBrandText>
         </StyledBrand>
@@ -97,7 +97,7 @@ const NavbarLink = styled(Link)`
     linear-gradient(currentColor 0 0) 0 0,
     linear-gradient(currentColor 0 0) 100% 100%,
     linear-gradient(currentColor 0 0) 100% 100%;
-  background-size: var(--d, 0) 3px, 3px var(--d, 0);
+  background-size: var(--d, 0) 2px, 2px var(--d, 0);
   background-repeat: no-repeat;
   transition: 0.5s;
   &:hover {

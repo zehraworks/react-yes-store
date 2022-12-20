@@ -1,11 +1,14 @@
 import React from "react";
 import myImage from "../../../public/bg-home2.jpg";
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 export function Home() {
   return (
     <StyledHome>
-      <Btn>yes store</Btn>
+      <Link to="store">
+        <Btn>yes store</Btn>
+      </Link>
     </StyledHome>
   );
 }
@@ -22,20 +25,20 @@ const StyledHome = styled.div`
   left: 0;
   top: 0;
   background-image: url(${myImage});
-  background-position: 15% 75%;
   background-size: cover;
   background-repeat: no-repeat;
 `;
 
 const Btn = styled.button`
   padding: 1rem 2rem;
-  font-size: 1.25rem;
+  font-size: 2.25rem;
   position: absolute;
-  top:50%;
+  top: 40%;
+  right: 45%;
   border: 2px solid black;
   text-align: center;
   cursor: pointer;
-  color: ${({ theme }) => theme.colors.black};
+  color: black /* ${({ theme }) => theme.colors.black} */;
   background-color: transparent;
   text-transform: uppercase;
 
@@ -46,7 +49,7 @@ const Btn = styled.button`
     border: 2px solid black;
     width: calc(100% + 15px);
     height: 60px;
-    transition: 0.5s ease;
+    transition: 0.3s ease;
   }
 
   &::after {
@@ -69,21 +72,3 @@ const Btn = styled.button`
     height: 80px;
   }
 `;
-
-/* const Photo = styled.img.attrs((props) => ({
-  src: props.src,
-}))`
-  background-image: url(${myImage});
-  background-repeat: no-repeat;
-  position: fixed;
-  top: -200px;
-  left: 0;
-
-  min-height: 100%;
-  min-width: 320px;
-
-  width: 100%;
-  height: auto;
-
-`;
- */
