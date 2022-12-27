@@ -1,87 +1,74 @@
-import beamBaget from "../../public/images/beam-baget-1.jpg";
-import corner from "../../public/images/corner-1.jpg";
-import heart from "../../public/images/heart-1.jpg";
-import koala from "../../public/images/koala-1.jpg";
-import loop from "../../public/images/loop-1.jpg";
-import mahal from "../../public/images/mahal-1.jpg";
-import peakySpring from "../../public/images/peaky-spring-1.jpeg";
-import pearl from "../../public/images/pearl-1.jpg";
-import trian from "../../public/images/trian-1.jpg";
-import triple from "../../public/images/triple-1.jpg";
-import triplePearl from "../../public/images/triple-pearl-1.jpg";
-import zigzag from "../../public/images/zigzag-1.jpg";
-
 const data = [
   {
     id: 1,
     name: "Triple Pearl",
-    img: triplePearl,
+    img: "triple-pearl-1.jpg",
     price: "$130",
   },
   {
     id: 2,
     name: "Corner",
-    img: corner,
+    img: "corner-1.jpg",
     price: "$170",
   },
   {
     id: 3,
     name: "Heart",
-    img: heart,
+    img: "heart-1.jpg",
     price: "$140",
   },
   {
     id: 4,
     name: "Koala",
-    img: koala,
+    img: "koala-1.jpg",
     price: "$155",
   },
   {
     id: 5,
     name: "Loop",
-    img: loop,
+    img: "loop-1.jpg",
     price: "$130",
   },
   {
     id: 6,
     name: "Mahal",
-    img: mahal,
+    img: "mahal-1.jpg",
     price: "$230",
   },
   {
     id: 7,
     name: "Peaky Spring",
-    img: peakySpring,
+    img: "peaky-spring-1.jpeg",
     price: "$180",
   },
   {
     id: 8,
     name: "Pearl",
-    img: pearl,
+    img: "pearl-1.jpg",
     price: "$130",
   },
   {
     id: 9,
     name: "Trian",
-    img: trian,
+    img: "trian-1.jpg",
     price: "$120",
   },
   {
     id: 10,
     name: "Triple",
-    img: triple,
+    img: "triple-1.jpg",
     price: "$190",
   },
   {
     id: 11,
     name: "Beam Baget",
-    img: beamBaget,
+    img: "beam-baget-1.jpg",
     price: "$330",
   },
   {
     id: 12,
     name: "Zig zag",
-    img: zigzag,
+    img: "zigzag-1.jpg",
     price: "$150",
   },
 ];

@@ -6,7 +6,7 @@ export function Product({ name, img, price, id }) {
   return (
     <Link to={`product/${id}`}>
       <Card>
-        <Img src={img} />
+        <Img src={`/public/images/${img}`} />
         <div>
           <p>{name}</p>
           <p>{price}</p>

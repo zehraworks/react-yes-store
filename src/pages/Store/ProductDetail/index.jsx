@@ -7,13 +7,13 @@ import { addItem } from "../../../redux/bagSlice/bagSlice.js";
 
 export function ProductDetail() {
   const { productId } = useParams();
-  console.log(data);
+
   const product = data.find((p) => p.id == productId); // strick equalitiyle undefined dönüyo
   const dispatch = useDispatch();
 
   return (
     <StyledWrapper>
-      <Left src={product.img} />
+      <Left src={`/public/images/${product.img}`} />
       <Right>
         <Name>{product.name}</Name>
         <Price>{product.price}</Price>
