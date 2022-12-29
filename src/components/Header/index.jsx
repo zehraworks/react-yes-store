@@ -3,7 +3,7 @@ import { NavLink, Link } from "react-router-dom";
 import styled from "styled-components";
 import { Diamond } from "@styled-icons/ionicons-solid/Diamond";
 import { Bag } from "@styled-icons/bootstrap/Bag";
-import { Search } from "styled-icons/bootstrap";
+import { Person } from "@styled-icons/bootstrap/Person";
 
 export function Header() {
   return (
@@ -18,8 +18,12 @@ export function Header() {
         </StyledBrand>
         <Navbar>
           <NavbarLink to="store">Store</NavbarLink>
-          <NavbarLink to="search"><StyledSearch/></NavbarLink>
-          <NavbarLink to="bag"><StyledBag/></NavbarLink>
+          <NavbarLink to="bag">
+            <StyledBag />
+          </NavbarLink>
+          <NavbarLink to="login">
+            <StyledPerson />
+          </NavbarLink>
         </Navbar>
       </Container>
     </HeaderWrapper>
@@ -31,8 +35,8 @@ const StyledDiamond = styled(Diamond)`
   margin-right: 0.5rem;
   color: ${({ theme }) => theme.colors.black};
 `;
-const StyledSearch = styled(Search)`
-  height: 2rem;
+const StyledPerson = styled(Person)`
+  height: 2.2rem;
 `;
 
 const Brand = styled.h1`
@@ -55,8 +59,8 @@ const BrandMini = styled.p`
 `;
 
 const StyledBag = styled(Bag)`
-    height: 2rem;
-`
+  height: 2rem;
+`;
 
 const HeaderWrapper = styled.header`
   background-color: ${({ theme }) => theme.colors.light};
@@ -76,7 +80,6 @@ const Container = styled.div`
     gap: 4rem;
   }
 `;
-
 
 const Navbar = styled.nav`
   display: flex;
@@ -104,8 +107,6 @@ const NavbarLink = styled(Link)`
     --d: 100%;
   }
 `;
-
-
 
 /* const ButtonContainer = styled.div`
   position: relative;

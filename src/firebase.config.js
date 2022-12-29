@@ -1,7 +1,14 @@
 import { initializeApp } from "firebase/app";
 import { getStorage } from "firebase/storage";
 import { getDatabase } from "firebase/database";
+import {
+  getAuth,
+  createUserWithEmailAndPassword,
+  signInWithEmailAndPassword,
+  signOut
+} from "firebase/auth";
 import { getAnalytics } from "firebase/analytics";
+import toast from "react-hot-toast";
 
 const firebaseConfig = {
   apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
@@ -18,3 +25,34 @@ export const app = initializeApp(firebaseConfig);
 export const db = getDatabase(app);
 export const storage = getStorage(app);
 export const analytics = getAnalytics(app);
+
+const auth = getAuth();
+
+export const register = async (email, password) => {
+  try {
+    const { user } = await createUserWithEmailAndPassword(
+      auth,
+      email,
+      password
+    );
+    return user;
+  } catch (error) {
+    toast.error(error.message);
+  }
+};
+export const login = async (email, password) => {
+  try {
+    const { user } = await signInWithEmailAndPassword(auth, email, password);
+    return user;
+  } catch (error) {
+    toast.error(error.message);
+  }
+};
+export const logout = async () => {
+  try {
+    await signOut(auth);
+    return true;
+  } catch (error) {
+    toast.error(error.message);
+  }
+};

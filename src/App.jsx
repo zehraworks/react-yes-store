@@ -6,7 +6,7 @@ import { ref, set } from "firebase/database";
 import data from "./data/data";
 
 function App() {
- // set(ref(db, `/products`), data);
+  // set(ref(db, `/products`), data);
   return (
     <>
       <Header />

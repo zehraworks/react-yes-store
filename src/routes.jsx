@@ -4,10 +4,11 @@ import {
   Product,
   ProductDetail,
   ProductsLayout,
-  Search,
+  LogIn,
   Bag,
   Page404,
 } from "./pages";
+
 
 const routes = [
   {
@@ -26,8 +27,8 @@ const routes = [
     ],
   },
   {
-    path: "search",
-    element: <Search />,
+    path: "login",
+    element: <LogIn />,
   },
   {
     path: "bag",
