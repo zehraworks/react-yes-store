@@ -21,7 +21,7 @@ export function Header() {
           <NavbarLink to="bag">
             <StyledBag />
           </NavbarLink>
-          <NavbarLink to="login">
+          <NavbarLink to="account">
             <StyledPerson />
           </NavbarLink>
         </Navbar>
