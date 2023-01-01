@@ -2,15 +2,24 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import { login } from "../../firebase.config";
 import { Toaster } from "react-hot-toast";
+import { useDispatch } from "react-redux";
+import { login as loginHandle } from "../../redux/auth/auth";
+import { useNavigate } from "react-router";
 
 export function LogIn() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     const user = await login(email, password);
+    dispatch(loginHandle(user));
     console.log(user);
+    navigate("/store", {
+      replace: true,
+    });
   };
 
   return (
@@ -80,6 +89,9 @@ const Login = styled.button`
   width: 300px;
   padding: 8px;
   background-color: ${({ theme }) => theme.colors.primary};
+  &:hover {
+    background-color: ${({ theme }) => theme.colors.hover.primary};
+  }
   color: white;
   border-style: none;
   border-radius: 3px;

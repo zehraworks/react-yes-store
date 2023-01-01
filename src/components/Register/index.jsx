@@ -8,11 +8,9 @@ export function Register() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-
   const handleSubmit = async (e) => {
     e.preventDefault();
     const user = await register(email, password);
-    console.log(user);
   };
 
   return (
@@ -96,6 +94,9 @@ const Signup = styled.button`
   width: 300px;
   padding: 8px;
   background-color: ${({ theme }) => theme.colors.primary};
+  &:hover {
+    background-color: ${({ theme }) => theme.colors.hover.primary};
+  }
   color: white;
   border-style: none;
   border-radius: 3px;
