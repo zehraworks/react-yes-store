@@ -12,7 +12,7 @@ export function Header() {
         <StyledBrand to="/">
           <StyledDiamond />
           <StyledBrandText>
-            <BrandMini>Everybody said</BrandMini>
+            <BrandMini>Everybody say</BrandMini>
             <Brand>YES</Brand>
           </StyledBrandText>
         </StyledBrand>
