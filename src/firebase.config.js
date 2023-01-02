@@ -5,10 +5,16 @@ import {
   getAuth,
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
-  signOut
+  signOut,
+  onAuthStateChanged,
 } from "firebase/auth";
 import { getAnalytics } from "firebase/analytics";
 import toast from "react-hot-toast";
+import { store } from "./redux/store";
+import {
+  login as loginHandle,
+  logout as logoutHandle,
+} from "./redux/auth/auth";
 
 const firebaseConfig = {
   apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
@@ -56,3 +62,17 @@ export const logout = async () => {
     toast.error(error.message);
   }
 };
+
+onAuthStateChanged(auth, (user) => {
+  if (user) {
+    store.dispatch(
+      loginHandle({
+        name: user.displayName,
+        email: user.email,
+        uid: user.uid,
+      })
+    );
+  } else {
+    store.dispatch(logoutHandle(user));
+  }
+});

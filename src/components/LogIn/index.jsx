@@ -1,30 +1,25 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import { login } from "../../firebase.config";
-import { Toaster } from "react-hot-toast";
-import { useDispatch } from "react-redux";
-import { login as loginHandle } from "../../redux/auth/auth";
 import { useNavigate } from "react-router";
 
 export function LogIn() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const dispatch = useDispatch();
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     const user = await login(email, password);
-    dispatch(loginHandle(user));
-    console.log(user);
-    navigate("/store", {
-      replace: true,
-    });
+    if (user) {
+      navigate("/store", {
+        replace: true,
+      });
+    }
   };
 
   return (
     <Container>
-      <Toaster />
       <Form onSubmit={handleSubmit}>
         <Title>Welcome Back</Title>
         <Paragraph>Login your account</Paragraph>

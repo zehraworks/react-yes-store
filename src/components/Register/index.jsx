@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import { register } from "../../firebase.config";
-import { Toaster } from "react-hot-toast";
+import { toast, Toaster } from "react-hot-toast";
 
 export function Register() {
   const [name, setName] = useState("");
@@ -11,6 +11,9 @@ export function Register() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     const user = await register(email, password);
+    toast.success("Your account has been created successfully");
+    setName(user.displayName)
+    console.log(user);
   };
 
   return (
